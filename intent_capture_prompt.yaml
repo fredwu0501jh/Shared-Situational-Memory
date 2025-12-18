@@ -17,11 +17,12 @@ prompt: |
 
   Please listen to the audio and extract:
   1. "situation": The context or trigger condition (e.g., "after finishing lunch", "when I arrive home")
-  2. "constraints": An object containing:
+  2. "visual_cues": Imagine you are a camera looking at the user. Describe the visual scene that corresponds to the situation. Use concrete terms describing actions and objects. (e.g., User said "when I read", visual_cues should be "A person holding an open book or looking at a book on a table")
+  3. "constraints": An object containing:
      - "frequency": How often (e.g., "daily", "once", "weekly") - OPTIONAL
      - "start_date": ISO 8601 date (YYYY-MM-DD) when reminder starts. Default to today ({current_date}) if not specified - REQUIRED
      - "end_date": ISO 8601 date (YYYY-MM-DD) when reminder expires. Calculate from relative expressions - OPTIONAL
-  3. "message": The actual reminder message
+  4. "message": The actual reminder message
 
   **CRITICAL**: Resolve all relative time expressions to absolute ISO 8601 dates.
 
@@ -35,6 +36,7 @@ prompt: |
   Respond with ONLY a valid JSON object in this exact format:
   {
     "situation": "...",
+    "visual_cues": "...",
     "constraints": {
       "frequency": "...",
       "start_date": "{current_date}",

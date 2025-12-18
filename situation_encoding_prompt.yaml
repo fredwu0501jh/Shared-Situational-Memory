@@ -1,1 +1,10 @@
-Briefly describe the core objects and scenes in this picture.
+role: user
+prompt: |
+  Analyze the image and describe the current **activity, user action, or state**.
+  Focus on:
+  1. What is the person doing? (e.g., reading, drinking, typing, leaving)
+  2. How are objects being interacted with? (e.g., holding a cup, opening a book)
+  3. The overall context/scene (e.g., sitting at a desk, standing by the door).
+
+  Output a concise description in a single sentence focusing on the action.
+  Example: "A person is sitting at a desk and opening a book."
